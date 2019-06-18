@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireStorage } from 'angularfire2/storage';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
@@ -23,10 +23,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
       authDomain: "nxt-escape-13bff.firebaseapp.com",
       storageBucket: "nxt-escape-13bff.appspot.com",
       projectId: "nxt-escape-13bff",
-    }),
-    AngularFireStorageModule, 
+      databaseURL: "https://nxt-escape-13bff.firebaseio.com",
+    }), 
   ],
-  providers: [],
+  providers: [AngularFireStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

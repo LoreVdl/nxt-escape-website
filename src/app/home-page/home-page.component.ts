@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from 'angularfire2/storage';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable } from 'rxjs';
+import { AngularFirestoreDocument, AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 
-export interface Image { id: string; imagePath: string; imageURL: string; imageName: string; maintTs: number; }
+export interface Image { id: string; name: string; }
 
 @Component({
   selector: 'app-home-page',
@@ -12,16 +11,27 @@ export interface Image { id: string; imagePath: string; imageURL: string; imageN
 })
 
 export class HomePageComponent implements OnInit {
-  private images; 
+  private imagesNames: Image[]; 
+  private images = []; 
 
-  constructor(private storage: AngularFireStorage, private fireStore: AngularFirestore) { }
+  constructor(private storage: AngularFireStorage, private database: AngularFirestore) { }
 
   ngOnInit() {
-    this.loadImages(); 
+    this.database.collection("images").snapshotChanges().subscribe(data => {
+      this.imagesNames = data.map(e => {
+        return {
+          id: e.payload.doc.id, 
+          ...e.payload.doc.data()
+        } as Image; 
+      }); 
+      this.loadImages();
+    }); 
   }
 
   loadImages() {
-    this.images = this.storage.ref("/image/11:58-Bzbx7HGtxU").getDownloadURL();
+    for (let i = 0; i < this.imagesNames.length; i++) {
+      this.images.push(this.storage.ref("/image/" + this.imagesNames[i].name).getDownloadURL());
+    }
   }
 
 }
