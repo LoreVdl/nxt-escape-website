@@ -12,7 +12,7 @@ export interface Image { id: string; name: string; }
 
 export class HomePageComponent implements OnInit {
   private imagesNames: Image[]; 
-  private images = []; 
+  public images = []; 
 
   constructor(private storage: AngularFireStorage, private database: AngularFirestore) { }
 
