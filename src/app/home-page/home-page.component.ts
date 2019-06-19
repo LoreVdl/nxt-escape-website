@@ -28,8 +28,8 @@ export class HomePageComponent implements OnInit {
       }); 
       this.loadImages();
     }); 
-
-    this.pause(); 
+    let video = <HTMLVideoElement>document.getElementById("video");
+    video.play();
   }
 
   videoEnd() {

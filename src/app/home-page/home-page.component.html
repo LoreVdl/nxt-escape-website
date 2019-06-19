@@ -1,15 +1,15 @@
 <section id = "page1">
     <div class = "headerImage">
         <div id = "navbar"> 
-            <a href = "#about">Over ons</a>
-            <a href = "#photos">Foto's</a>
-            <a href = "#contact">Contact</a>
+            <a href = "#about" ><img class = "about" src = './assets/images/about.svg'></a>
+            <a href = "#photos"><img src = './assets/images/photo.svg'></a>
+            <a href = "#contact"><img src = './assets/images/contact.svg'></a>
         </div>
-        <video autoplay = "autoplay" muted id="video" (ended)="videoEnd()">  
+        <video muted id="video" (ended)="videoEnd()">  
             <source src="./assets/video.mp4" type="video/mp4">
         </video>
         <a class = "downButton" href = "#about"><img src = "./assets/images/buttonDown.svg"></a>
-        <img (click) ="pause()" id = "pauseBtn" src = "./assets/images/play.svg">
+        <img (click) ="pause()" id = "pauseBtn" src = "./assets/images/pause.svg">
     </div>
 </section>
 
