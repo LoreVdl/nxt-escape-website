@@ -1,3 +1,41 @@
-<div *ngFor = "let image of images">
-    <img src="{{image | async}}" />
+<section id = "page1">
+    <div class = "headerImage">
+        <div id = "navbar"> 
+            <a href = "#about">Over ons</a>
+            <a href = "#photos">Foto's</a>
+            <a href = "#contact">Contact</a>
+        </div>
+        <video autoplay muted id="video">
+            <source src="./assets/video.mp4" type="video/mp4">
+        </video>
+        <a class = "downButton" href = "#about"><img src = "./assets/images/button.svg"></a>
+        <img (click) ="pause()" id = "pauseBtn" src = "./assets/images/button.svg">
+    </div>
+</section>
+
+<div class = "content">
+    <section id = "about" class = "cfx">
+        <h1>Over ons</h1>
+        <img src = "./assets/images/selfie.jpeg">
+        <p> NxT Escape is een escape room die die ontwikkelt is voor studenten die geïnteresseerd zijn in of meer voeling willen krijgen met de richting NxT Media Technology. Aan de hand van een applicatie, puzzels en raadsels die geïnspireerd zijn op het nieuwe curriculum kunnen de studenten proeven van de richting NxT Media Technology.</p>
+    </section>
+            
+    <section id = "photos">
+        <h1>Foto's</h1>
+        <div class = "images">
+            <div *ngFor = "let image of images">
+                <div class = "image">
+                    <img src="{{image.name | async}}" />
+                </div>
+                <div class = "time">
+                    <p>{{ image.time }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+            
+    <section id = "contact">
+        <h1>Contact</h1>
+    </section>
 </div>
+

@@ -8,6 +8,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import {Ng2SimplePageScrollModule} from 'ng2-simple-page-scroll';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
       projectId: "nxt-escape-13bff",
       databaseURL: "https://nxt-escape-13bff.firebaseio.com",
     }), 
+    Ng2SimplePageScrollModule.forRoot(),
   ],
   providers: [AngularFireStorage],
   bootstrap: [AppComponent]
