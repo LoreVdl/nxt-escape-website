@@ -25,7 +25,7 @@
         <div class = "images">
             <div *ngFor = "let image of images">
                 <div class = "image">
-                    <img src="{{image.name | async}}" />
+                    <img id={{image.name|async}} src="{{image.name | async}}" (click) = "fullscreen($event)"/>
                 </div>
                 <div class = "time">
                     <p>{{ image.time }}</p>
@@ -35,7 +35,24 @@
     </section>
             
     <section id = "contact">
-        <h1>Contact</h1>
+        <div class = "adres">
+            <h2>Adres</h2>
+            <p>Salesianenlaan 90</p>
+            <p>2660 Antwerpen</p>
+        </div>
+        <div class = "number">
+            <h2>Contact</h2>
+            <p>+32 499 76 43 45</p>
+            <p>+32 499 33 44 78</p>
+        </div>
+        <div class = "mail">
+            <p>ruben.vandermeirsch@student.kdg.be</p>
+            <p>lore.vanderlinden@student.kdg.be</p>
+        </div>
+    </section>
+
+    <section id = "footer">
+
     </section>
 </div>
 

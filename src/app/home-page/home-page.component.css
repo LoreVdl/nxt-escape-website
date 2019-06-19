@@ -5,6 +5,11 @@
 
 @font-face {
     font-family: "montserrat"; 
+    src: url(../../assets/lettertype/Montserrat-Light.ttf); 
+}
+
+@font-face {
+    font-family: "montserratBold"; 
     src: url(../../assets/lettertype/Montserrat-SemiBold.ttf); 
 }
 
@@ -29,7 +34,7 @@ section {
 
 #navbar {
     font-family: "futur"; 
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(0, 0, 0, 1); 
     position: fixed;
     top: 0;
     width: 100%;
@@ -44,21 +49,16 @@ section {
     color: #f2f2f2;
     text-align: center;
     text-decoration: none;
-    max-width: 40px;
+    width: 50px;
     padding: 0 20px;
 }
   
 #navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    transform: scale(1.2) translateY(-7px);
 }
 
 #navbar img {
     width: 100%;
-}
-
-#navbar .about{
-    width: 50%;
 }
 
 .downButton {
@@ -147,11 +147,17 @@ section {
     margin-top: 60px;
 }
 
+figure {
+    margin: 0;
+}
+
 .image {
     position: relative;
     width: 350px;
     height: 350px;
     overflow: hidden;
+	display: block;
+	opacity: 0.8;
 }
 
 .image img {
@@ -164,6 +170,12 @@ section {
     -ms-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%) rotate(90deg);
     z-index: 0;
+    transition: transform .5s ease;
+}
+
+.image:hover img {
+    transform: translate(-50%,-50%) scale(1.1) rotate(90deg);
+    cursor: pointer;
 }
 
 .time p {
@@ -171,6 +183,30 @@ section {
     text-align: center;
     font-family: "futur";
 }
+
+#contact {
+    width: 60%;
+    height: auto;
+    font-family: "montserrat"; 
+    padding: 0 20% 90px 20%;
+    display: grid; 
+    grid-template-columns: auto auto auto; 
+    grid-gap: 50px;
+}
+
+#contact h2 {
+    padding-top: 60px;
+    font-family: "montserratBold";
+}
+
+.number {
+    text-align: right; 
+}
+
+.mail {
+    padding-top: 110px;
+}
+
 
 .cfx {
     overflow: auto;
