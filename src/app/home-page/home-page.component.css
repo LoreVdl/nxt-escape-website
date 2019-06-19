@@ -59,18 +59,20 @@ section {
     width: 100%;
     padding: 30px 0 30px 0; 
     display: block;
-    margin-top: 90vh;
+    margin-top: 87vh;
     padding-bottom: 0; 
 }
 
 #pauseBtn {
     position: fixed;
     top: 0;
-    width: 3%;
+    left: 95%;
+    width: 2%;
     padding: 30px 0 30px 0; 
     display: block;
-    margin-top: 88vh;
+    margin-top: 89vh;
     padding-bottom: 0; 
+    cursor: pointer;
 }
 
 .downButton img{
@@ -159,7 +161,7 @@ section {
 .time p {
     color: #fff; 
     text-align: center;
-    font-family: "montserrat";
+    font-family: "futur";
 }
 
 .cfx {

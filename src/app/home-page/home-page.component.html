@@ -5,11 +5,11 @@
             <a href = "#photos">Foto's</a>
             <a href = "#contact">Contact</a>
         </div>
-        <video autoplay muted id="video">
+        <video autoplay = "autoplay" muted id="video" (ended)="videoEnd()">  
             <source src="./assets/video.mp4" type="video/mp4">
         </video>
-        <a class = "downButton" href = "#about"><img src = "./assets/images/button.svg"></a>
-        <img (click) ="pause()" id = "pauseBtn" src = "./assets/images/button.svg">
+        <a class = "downButton" href = "#about"><img src = "./assets/images/buttonDown.svg"></a>
+        <img (click) ="pause()" id = "pauseBtn" src = "./assets/images/play.svg">
     </div>
 </section>
 

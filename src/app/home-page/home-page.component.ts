@@ -29,9 +29,14 @@ export class HomePageComponent implements OnInit {
       this.loadImages();
     }); 
 
-    this.pause();
+    this.pause(); 
   }
 
+  videoEnd() {
+    let btn = document.getElementById("pauseBtn");
+    btn.setAttribute("src", "./assets/images/play.svg"); 
+  }
+  
   loadImages() {
     for (let i = 0; i < this.imagesNames.length; i++) {
       let minutes = +(this.imagesNames[i].name.substring(0, 2)); 
@@ -50,8 +55,10 @@ export class HomePageComponent implements OnInit {
     let btn = document.getElementById("pauseBtn");
     if (video.paused) {
       video.play();
+      btn.setAttribute("src", "./assets/images/pause.svg"); 
     } else {
       video.pause();
+      btn.setAttribute("src", "./assets/images/play.svg"); 
     }
   }
   
