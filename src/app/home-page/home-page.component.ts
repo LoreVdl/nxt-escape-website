@@ -28,6 +28,8 @@ export class HomePageComponent implements OnInit {
       }); 
       this.loadImages();
     }); 
+
+    this.pause();
   }
 
   loadImages() {
